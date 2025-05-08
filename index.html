@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konstantinos Koumarianos - Developer</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-900 font-inter transition-colors duration-300">
+  <nav class="bg-white shadow-md fixed w-full z-30 transition-colors duration-300">
+    <div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold font-jetbrains text-blue-600 animate-glow">Koumarianos</h1>
+      <ul class="flex space-x-6 items-center animate-nav-stagger">
+        <li><a href="#home" class="hover:text-blue-600 font-semibold transition-colors neon-hover">Home</a></li>
+        <li><a href="#about" class="hover:text-blue-600 font-semibold transition-colors neon-hover">About</a></li>
+        <li><a href="#skills" class="hover:text-blue-600 font-semibold transition-colors neon-hover">Skills</a></li>
+        <li><a href="#projects" class="hover:text-blue-600 font-semibold transition-colors neon-hover">Projects</a></li>
+        <li><a href="#connect" class="hover:text-blue-600 font-semibold transition-colors neon-hover">Connect</a></li>
+        <li>
+          <button id="theme-toggle" class="focus:outline-none text-gray-700 hover:text-blue-600 transition transform hover:scale-110">
+            <i class="fas fa-moon fa-lg"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="home" class="min-h-screen flex items-center justify-center pt-20 bg-white relative overflow-hidden">
+    <div class="text-center max-w-4xl mx-auto px-4 z-10">
+      <h2 class="text-4xl md:text-5xl font-bold font-jetbrains mb-6 whitespace-nowrap">
+        <span id="typing-text" class="inline-block"></span><span id="cursor" class="border-r-4 border-blue-600 animate-glow-cursor"></span>
+      </h2>
+      <p class="text-lg md:text-xl mb-6 text-gray-700 animate-slide-in">17-Year-Old Developer from Syros, Greece</p>
+      <p class="text-md md:text-lg mb-8 max-w-2xl mx-auto animate-slide-in">Building innovative solutions with Lua and web technologies.</p>
+      <div class="flex justify-center space-x-4 animate-slide-in">
+        <a href="#projects" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition font-semibold transform hover:scale-105 holographic">My Work</a>
+        <a href="#connect" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition font-semibold transform hover:scale-105 holographic">Connect</a>
+      </div>
+    </div>
+    <canvas id="matrix-bg" class="absolute inset-0 z-0"></canvas>
+  </section>
+
+  <section id="about" class="py-24 bg-gray-50 relative">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 font-jetbrains animate-slide-in">About Me</h2>
+      <div class="relative animate-code-glow">
+        <pre class="bg-gray-900 text-green-400 p-6 rounded-lg shadow-lg font-jetbrains text-sm animate-code-reveal">
+local Koumarianos = {
+    name = "Konstantinos Koumarianos",
+    username = "koumarianos_",
+    age = 17,
+    location = "Syros, Greece",
+    socials = {
+        x = "koumarianos_",
+        instagram = "koumarianos_",
+        discord = "koumarianos_",
+        github = "koumarianos"
+    },
+    interests = {"Coding", "Gaming", "Formula 1"}
+}
+
+function Koumarianos:describe()
+    return self.name .. " - Code Visionary"
+end
+
+print(Koumarianos:describe())
+        </pre>
+      </div>
+      <p class="text-md md:text-lg mt-8 text-center animate-on-scroll">I’m Konstantinos, a 17-year-old coder from Syros, Greece. My journey began with Lua for game development, and now I create dynamic web experiences with HTML, CSS, and JavaScript. Passionate about technology, gaming, and Formula 1, I aim to craft solutions that inspire.</p>
+      <!-- Coding Journey -->
+      <div class="mt-12">
+        <h3 class="text-2xl font-semibold text-center mb-8 font-jetbrains animate-slide-in">Code Journey</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div class="bg-white p-4 rounded-lg shadow-md animate-on-scroll holographic">
+            <h4 class="text-lg font-semibold">2022</h4>
+            <p class="text-gray-600">Started Lua scripting for games.</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-md animate-on-scroll holographic">
+            <h4 class="text-lg font-semibold">2023</h4>
+            <p class="text-gray-600">Mastered web dev with HTML, CSS, JS.</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-md animate-on-scroll holographic">
+            <h4 class="text-lg font-semibold">2025</h4>
+            <p class="text-gray-600">Contributing to open-source projects.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Floating Code Snippets -->
+      <div id="floating-snippets" class="absolute inset-0 pointer-events-none"></div>
+    </div>
+  </section>
+
+  <section id="skills" class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 font-jetbrains animate-slide-in">Skills</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center animate-on-scroll holographic ripple">
+          <i class="fas fa-code fa-2x text-blue-600 mb-4"></i>
+          <h3 class="text-lg font-semibold">Lua</h3>
+          <p class="text-gray-600">Game scripting</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center animate-on-scroll holographic ripple">
+          <i class="fab fa-html5 fa-2x text-blue-600 mb-4"></i>
+          <h3 class="text-lg font-semibold">HTML/CSS</h3>
+          <p class="text-gray-600">Web design</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center animate-on-scroll holographic ripple">
+          <i class="fab fa-js fa-2x text-blue-600 mb-4"></i>
+          <h3 class="text-lg font-semibold">JavaScript</h3>
+          <p class="text-gray-600">Interactivity</p>
+        </div>
+        <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center animate-on-scroll holographic ripple">
+          <i class="fab fa-git-alt fa-2x text-blue-600 mb-4"></i>
+          <h3 class="text-lg font-semibold">Git</h3>
+          <p class="text-gray-600">Version control</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="py-24 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 font-jetbrains animate-slide-in">Projects</h2>
+      <div class="grid grid-cols-1 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md animate-on-scroll holographic tilt">
+          <h3 class="text-lg font-semibold font-jetbrains">GitHub Readme</h3>
+          <p class="text-gray-600">Dynamic README with markdown and badges.</p>
+          <a href="https://github.com/koumarianos/koumarianos" target="_blank" class="text-blue-600 hover:underline font-semibold">View on GitHub</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md animate-on-scroll holographic tilt">
+          <h3 class="text-lg font-semibold font-jetbrains">Lua Game Script</h3>
+          <p class="text-gray-600">Custom game mechanics in Lua.</p>
+          <a href="#" class="text-blue-600 hover:underline font-semibold">Private Repo</a>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md animate-on-scroll holographic tilt">
+          <h3 class="text-lg font-semibold font-jetbrains">This Website</h3>
+          <p class="text-gray-600">Portfolio built with HTML, CSS, JS.</p>
+          <a href="#" class="text-blue-600 hover:underline font-semibold">You're here!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="connect" class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 font-jetbrains animate-slide-in">Connect</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-6">
+        <a href="https://x.com/koumarianos_" target="_blank" class="bg-gray-50 p-6 rounded-lg shadow-md text-center animate-on-scroll holographic neon-pulse">
+          <i class="fab fa-x-twitter fa-2x text-blue-600 mb-4"></i>
+          <p class="text-gray-600">@koumarianos_</p>
+        </a>
+        <a href="https://instagram.com/koumarianos_" target="_blank" class="bg-gray-50 p-6 rounded-lg shadow-md text-center animate-on-scroll holographic neon-pulse">
+          <i class="fab fa-instagram fa-2x text-blue-600 mb-4"></i>
+          <p class="text-gray-600">koumarianos_</p>
+        </a>
+        <a href="https://discord.com/users/koumarianos_" target="_blank" class="bg-gray-50 p-6 rounded-lg shadow-md text-center animate-on-scroll holographic neon-pulse">
+          <i class="fab fa-discord fa-2x text-blue-600 mb-4"></i>
+          <p class="text-gray-600">koumarianos_</p>
+        </a>
+        <a href="https://github.com/koumarianos" target="_blank" class="bg-gray-50 p-6 rounded-lg shadow-md text-center animate-on-scroll holographic neon-pulse">
+          <i class="fab fa-github fa-2x text-blue-600 mb-4"></i>
+          <p class="text-gray-600">koumarianos</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-100 py-12">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <p class="text-md animate-slide-in">© 2025 Konstantinos Koumarianos. Crafting innovative solutions from Syros, Greece.</p>
+      <div class="mt-4 flex justify-center space-x-4">
+        <a href="https://x.com/koumarianos_" target="_blank" class="text-blue-400 hover:text-blue-300 neon-hover"><i class="fab fa-x-twitter fa-lg"></i></a>
+        <a href="https://github.com/koumarianos" target="_blank" class="text-blue-400 hover:text-blue-300 neon-hover"><i class="fab fa-github fa-lg"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

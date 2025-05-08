@@ -1,0 +1,248 @@
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-jetbrains {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glow {
+  0%, 100% { text-shadow: 0 0 4px rgba(29, 78, 216, 0.3); }
+  50% { text-shadow: 0 0 12px rgba(29, 78, 216, 0.6); }
+}
+
+@keyframes glowCursor {
+  0%, 100% { border-color: transparent; box-shadow: 0 0 4px rgba(29, 78, 216, 0.3); }
+  50% { border-color: #1d4ed8; box-shadow: 0 0 8px rgba(29, 78, 216, 0.6); }
+}
+
+@keyframes codeReveal {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes codeGlow {
+  0%, 100% { box-shadow: 0 0 8px rgba(29, 78, 216, 0.3); }
+  50% { box-shadow: 0 0 16px rgba(29, 78, 216, 0.6); }
+}
+
+@keyframes ripple {
+  0% { box-shadow: 0 0 0 0 rgba(29, 78, 216, 0.3); }
+  50% { box-shadow: 0 0 0 20px rgba(29, 78, 216, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(29, 78, 216, 0); }
+}
+
+@keyframes navStagger {
+  from { opacity: 0; transform: translateX(10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes tilt {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-slide-in {
+  animation: slideIn 1s ease-out;
+}
+
+.animate-glow {
+  animation: glow 2.5s ease-in-out infinite;
+}
+
+.animate-glow-cursor {
+  animation: glowCursor 1s infinite;
+}
+
+.animate-code-reveal {
+  animation: codeReveal 1.2s ease-out;
+}
+
+.animate-code-glow {
+  animation: codeGlow 2s ease-in-out infinite;
+}
+
+.ripple:hover {
+  animation: ripple 1.5s infinite;
+}
+
+
+.animate-nav-stagger li {
+  animation: navStagger 0.5s ease-out forwards;
+}
+
+.animate-nav-stagger li:nth-child(1) { animation-delay: 0.1s; }
+.animate-nav-stagger li:nth-child(2) { animation-delay: 0.2s; }
+.animate-nav-stagger li:nth-child(3) { animation-delay: 0.3s; }
+.animate-nav-stagger li:nth-child(4) { animation-delay: 0.4s; }
+.animate-nav-stagger li:nth-child(5) { animation-delay: 0.5s; }
+.animate-nav-stagger li:nth-child(6) { animation-delay: 0.6s; }
+
+.tilt:hover {
+  animation: tilt 0.5s ease-in-out;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.holographic {
+  position: relative;
+  overflow: hidden;
+}
+
+.holographic::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(29, 78, 216, 0.2),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: transform 0.5s ease;
+}
+
+.holographic:hover::before {
+  transform: rotate(45deg) translate(70%, 70%);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Dark mode styles */
+body.dark {
+  background-color: #111827;
+  color: #f1f5f9;
+}
+
+body.dark nav {
+  background-color: #1e293b;
+}
+
+body.dark nav a,
+body.dark #theme-toggle {
+  color: #e2e8f0;
+}
+
+body.dark nav a:hover,
+body.dark #theme-toggle:hover {
+  color: #93c5fd;
+}
+
+body.dark #home,
+body.dark #about,
+body.dark #skills,
+body.dark #projects,
+body.dark #connect {
+  background-color: #111827;
+}
+
+body.dark .bg-white {
+  background-color: #1e293b;
+}
+
+body.dark .bg-gray-50 {
+  background-color: #1e293b;
+}
+
+body.dark .text-gray-600 {
+  color: #d1d5db;
+}
+
+body.dark .text-gray-700 {
+  color: #e5e7eb;
+}
+
+body.dark .text-blue-600 {
+  color: #93c5fd;
+}
+
+body.dark .bg-blue-600 {
+  background-color: #1d4ed8;
+}
+
+body.dark .border-blue-600 {
+  border-color: #1d4ed8;
+}
+
+body.dark .hover\:bg-blue-700:hover {
+  background-color: #1e40af;
+}
+
+body.dark pre {
+  background-color: #0f172a;
+}
+
+#theme-toggle .fa-moon::before {
+  content: "\f186"; /* Moon icon for light mode */
+}
+
+body.dark #theme-toggle .fa-moon::before {
+  content: "\f185"; /* Sun icon for dark mode */
+}
+
+pre {
+  font-family: 'JetBrains Mono', monospace;
+  overflow-x: auto;
+  line-height: 1.6;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+pre:hover {
+  transform: scale(1.02);
+}
+
+#matrix-bg {
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.bg-gray-50 {
+  background: rgba(249, 250, 251, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+body.dark .bg-gray-50 {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.neon-hover:hover {
+  text-shadow: 0 0 8px rgba(29, 78, 216, 0.6);
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    gap: 0.5rem;
+  }
+  .text-5xl {
+    font-size: 2.25rem;
+  }
+  .text-4xl {
+    font-size: 1.75rem;
+  }
+}
